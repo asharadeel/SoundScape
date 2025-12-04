@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+/* DIRECTORY_HOME */
+.header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.header div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.genre-list,
+.album-list,
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.genre,
+.album,
+.song {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 18px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.genre,
+.album {
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.genre:hover,
+.album:hover {
+  background: #eaeaea;
+  transform: translateY(-1px);
+}
+
+.song audio {
+  margin-top: 5px;
+  width: 100%;
+}
