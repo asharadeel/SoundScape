@@ -149,6 +149,11 @@ a:hover{
   border: 5px solid rgb(255, 255, 255);
 }
 
+.album{
+  width: 12em;
+  height: 12em;
+}
+
 /* TEXT FOR EACH CELL */
 .genre-text, .album-text {
   font-family: "Science Gothic", sans-serif;
