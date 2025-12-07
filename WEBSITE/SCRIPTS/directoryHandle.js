@@ -1,7 +1,7 @@
 fetch("/music")
     .then(res => res.json())
     .then(data => {
-        const container = document.getElementById("genres");
+        const container = document.getElementById("genre");
 
         Object.keys(data).forEach(genre => {
             const genreDiv = document.createElement("div");

@@ -1,33 +1,94 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chokokutai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*
+.playwrite-no-<uniquifier> {
+  font-family: "Playwrite NO", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.chokokutai-regular {
+  font-family: "Chokokutai", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.science-gothic-<uniquifier> {
+  font-family: "Science Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "CTRS" 0;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*/
+
+
+
+html, body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: rgb(37, 37, 37);
   padding: 20px;
+  height: 100%;
+  margin: 0;
 }
 
 
 /* GENERAL */
 h1 {
   font-size: 3em;
-  margin-bottom: 20px;
 }
 
 a{
-  background: white;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 200;
+  background: rgba(0, 0, 0, 0.658);
   padding: 1em;
   text-decoration: none;
   transition: all 0.15s;
+  border-radius: 3em;
+  color: white;
 }
 
 a:hover{
   background: #eaeaea;
   border-radius: 10px;
-
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.863);
   transition: all 0.15s;
+  color: rgb(0, 0, 0);
 }
 
-/* DIRECTORY_HOME */
+/* 
+# # # #   # # DIRECTORY_HOME 
+*/
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styles */
 .header {
-  background: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.76)), url("../IMAGES/seamless5.gif");
+  background-size: 20%;
+  background-position: center;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 4px 6px 9px;
+  flex: 0 0 auto;
   border-radius: 1em;
   display: flex;
   justify-content: space-between;
@@ -42,55 +103,137 @@ a:hover{
   gap: 10px;
 }
 
-.genre-list {
-  display: flex !important;        
-  flex-direction: row !important;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 10px 0;
+.header h1{
+  font-family: "Chokokutai";
 }
 
-.genre {
+/*LISTS*/
+.genre-list, .album-list {
+  box-sizing: border-box;
+  padding: 2em;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;        
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 16px;
+  background: rgb(190, 190, 190);
+  border-radius: 1em;
+}
+
+
+/* ALBUM CELLS*/
+.genre, .album{
   flex: 0 0 auto;                 
   width: 15em;
   height: 15em;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 1em;
   background: white;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   cursor: pointer;
+  position: relative;
+  overflow: hidden; 
+  padding: 1em;
+  font-size: 18px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.5s;
 }
 
-.genre-list,
-.album-list,
-.song-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.genre:hover, .album:hover{
+  background: #eaeaea;
+  box-shadow: 3px 5px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  border: 5px solid rgb(255, 255, 255);
 }
 
-.genre,
-.album,
-.song {
+/* TEXT FOR EACH CELL */
+.genre-text, .album-text {
+  font-family: "Science Gothic", sans-serif;
+  font-size: 1.5em;
+  text-shadow: rgb(0, 0, 0) 1px 1px 4px;
+  font-style: italic;
+  position: relative;
+  z-index: 2;       /* ABOVE overlay */
+  color: white;     /* or whatever you choose */
+}
+
+/* OVERLAY FOR DARKENING IMAGE */
+.genre::before, .album::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* darkness */
+  z-index: 1;
+  pointer-events: none;
+}
+
+#genre-title {
+  background: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.76)), url("../IMAGES/seamless6.gif");
+  background-size: 20%;
+  background-position: center;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 4px 6px 9px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4em;
+  padding: 0.2em;
+  margin: 0.2em 0em 0.5em 0em;
+  border-radius: 5em;
+  text-align: center;
+}
+
+#album-title{
+
+  font-family: "Bebas Neue", sans-serif;
   background: white;
+  margin: 0.2em 0em 0.3em 0em;
+  border-radius: 1em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.back-genre-link{
+  font-size: 16px;
+}
+
+/* SONGS */
+.song-list{
+  padding: 1em;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;        
+  flex-direction: column;
+  overflow-y: auto;
+  background: rgb(190, 190, 190);
+  border-radius: 1em;
+}
+
+.song {
+  display: grid;
+  grid-template-columns: 1fr 1fr 9fr;
+  align-items: center;
+  background: white;
+
+  margin-bottom: 12px;
   padding: 12px 16px;
   border-radius: 6px;
   font-size: 18px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.genre,
-.album {
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
-}
-
-.genre:hover,
-.album:hover {
-  background: #eaeaea;
-  transform: translateY(-1px);
+.song-track{
+  font-family: "Science Gothic", sans-serif;
+  background: rgb(232, 135, 135);
+  padding: 0.2em 0.5em;
+  text-align: center;
+  margin-right: 3em; 
+  border-radius: 2em;
 }
 
 .song audio {
