@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="IMAGES/icon.ico" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Albums</title>
+  <title>SoundScape Albums</title>
   <link rel="stylesheet" href="STYLES/reset.css">
   <link rel="stylesheet" href="STYLES/directory.css">
 </head>
@@ -11,15 +12,15 @@
 
   <header class="header">
     <div>
-      <h1>SoundScape Directory</h1>
-    </div>
-    <div>
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link"><img src="IMAGES/LOGO_TRANSP.png" alt="description"></a>
     </div>
   </header>
-
+  
   <h1 id="genre-title"></h1>
-  <div id="album-list" class="album-list"></div>
+
+  <div class = "main-body">
+    <div id="album-list" class="album-list"></div>
+  </div>
 
   <script src="SCRIPTS/directoryHandle.js"></script>
   <script src="SCRIPTS/loadalbums.js"></script>

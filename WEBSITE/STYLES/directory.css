@@ -40,11 +40,11 @@
 
 html, body {
   font-family: Arial, sans-serif;
-  background: rgb(37, 37, 37);
-  padding: 20px;
+  background: rgb(150,150,150);
   height: 100%;
   margin: 0;
 }
+
 
 
 /* GENERAL */
@@ -83,18 +83,17 @@ a:hover{
 
 /* Header styles */
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.76)), url("../IMAGES/seamless5.gif");
+  background: rgb(180,180,180);
   background-size: 20%;
   background-position: center;
-  color: white;
-  text-shadow: rgb(0, 0, 0) 4px 6px 9px;
+  color: rgb(0, 0, 0);
+  text-shadow: rgb(0, 0, 0) 0.1px 0.2px;
   flex: 0 0 auto;
-  border-radius: 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 2em;
-  margin: 0em 0em 1em 0em;
+  padding: 0.5em 1em 0.5em 1em;
+
 }
 
 .header div{
@@ -103,8 +102,49 @@ a:hover{
   gap: 10px;
 }
 
-.header h1{
-  font-family: "Chokokutai";
+.nav-link {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link img {
+  height: 4em;       
+  width: auto;
+  display: block;      
+  transition: 0.2s ease;
+}
+
+
+.nav-link:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+
+/* DIRECTORY TITLE */
+.directory-title{
+  text-align: center;
+  font-size: 2em;
+  background: rgb(240,240,240);
+}
+
+h1, h2{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+
+}
+/* Main body styles */
+.main-body {
+  flex: 1 1 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 /*LISTS*/
@@ -121,6 +161,16 @@ a:hover{
   border-radius: 1em;
 }
 
+/* ALBUM LIST AS GRID */
+.album-list {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+  overflow-x: hidden;  /* stop horizontal scroll */
+  overflow-y: auto;    /* vertical scroll if many rows */
+  padding: 2em;
+}
 
 /* ALBUM CELLS*/
 .genre, .album{
@@ -161,8 +211,10 @@ a:hover{
   text-shadow: rgb(0, 0, 0) 1px 1px 4px;
   font-style: italic;
   position: relative;
-  z-index: 2;       /* ABOVE overlay */
-  color: white;     /* or whatever you choose */
+  z-index: 2;       
+  color: white;    
+  display: flex;
+  flex-direction: column;
 }
 
 /* OVERLAY FOR DARKENING IMAGE */
@@ -175,32 +227,22 @@ a:hover{
   pointer-events: none;
 }
 
-#genre-title {
-  background: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.76)), url("../IMAGES/seamless6.gif");
+#genre-title ,#album-title{
+  background: rgb(225,225,225);
   background-size: 20%;
   background-position: center;
-  color: white;
-  text-shadow: rgb(0, 0, 0) 4px 6px 9px;
+  color: rgb(0, 0, 0);
+  text-shadow: rgba(0, 0, 0, 0.116) 1px 2px ;
   font-family: "Bebas Neue", sans-serif;
   font-size: 4em;
-  padding: 0.2em;
-  margin: 0.2em 0em 0.5em 0em;
-  border-radius: 5em;
-  text-align: center;
-}
-
-#album-title{
-
-  font-family: "Bebas Neue", sans-serif;
-  background: white;
-  margin: 0.2em 0em 0.3em 0em;
-  border-radius: 1em;
   padding: 0.5em;
+  border-radius: 0em;
+  text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
+
 
 .back-genre-link{
   font-size: 16px;
@@ -220,22 +262,20 @@ a:hover{
 }
 
 .song {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5em;
   display: grid;
-  grid-template-columns: 1fr 1fr 9fr;
+  grid-template-columns: 0.1fr 1.5fr 9.4fr;
   align-items: center;
-  background: white;
-
+  background: rgb(230,230,230);
   margin-bottom: 12px;
   padding: 12px 16px;
   border-radius: 6px;
-  font-size: 18px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .song-track{
   font-family: "Science Gothic", sans-serif;
-  background: rgb(232, 135, 135);
-  padding: 0.2em 0.5em;
   text-align: center;
   margin-right: 3em; 
   border-radius: 2em;
@@ -246,4 +286,61 @@ a:hover{
   width: 100%;
 }
 
+@media (max-width: 700px) {
+  /* mobile-only CSS here */
+
+  .header{
+    font-size: 0.75em;
+  }
+  h1{
+    font-size: 1em;
+  }
+  h2{
+    font-size: 0.75em;
+  }
+
+  #genre-title ,#album-title{
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .genre-list, .album-list {
+  box-sizing: border-box!important;
+  padding: 1em !important;
+  display: flex !important; 
+  align-items: center !important;       
+  flex-direction: column!important ;
+  overflow-y: auto !important;
+  gap: 32px !important;
+  }
+
+  /* MOBILE SONG LAYOUT */
+
+  .song {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: center;
+  }
+
+  .song-track{
+    display: none;
+  }
+
+  .song-name,
+  .song-audio {
+    width: 100%;         /* stretch nicely */
+  }
+
+  .song-audio {
+    display: flex;
+    justify-content: center;
+  }
+
+
+}
 

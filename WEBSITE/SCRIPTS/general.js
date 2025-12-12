@@ -1,4 +1,5 @@
 // MOBILE REDIRECT HANDLER
+/*
 (function () {
   const isMobileDevice =
     /Android|iPhone|iPad|iPod|Windows Phone|BlackBerry|webOS/i.test(navigator.userAgent);
@@ -16,3 +17,4 @@
     window.location.href = "mobile.html";
   }
 })();
+*/

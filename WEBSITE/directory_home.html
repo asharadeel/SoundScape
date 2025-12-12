@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" href="IMAGES/icon.ico" type="image/png">
   <meta charset="UTF-8" />
-  <title>Genres</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundScape Genres</title>
   <link rel="stylesheet" href="STYLES/reset.css">
   <link rel="stylesheet" href="STYLES/directory.css">
 </head>
@@ -10,15 +12,17 @@
 
   <header class="header">
     <div>
-      <h1>SoundScape Directory</h1>
-    </div>
-    <div>
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link"><img src="IMAGES/LOGO_TRANSP.png" alt="description"></a>
     </div>
   </header>
-
-  <div id="genre-list" class="genre-list"></div>
-
+  
+  <div class="directory-title">
+    <h1> Welcome to SoundScape Directory </h1>
+    <h2> Genres </h2>
+  </div>
+  <div class = "main-body">
+    <div id="genre-list" class="genre-list"></div>
+  </div>
   <script src="SCRIPTS/directoryHandle.js"></script>
   <script src="SCRIPTS/loadgenres.js"></script>
   <script src="SCRIPTS/general.js"></script>
